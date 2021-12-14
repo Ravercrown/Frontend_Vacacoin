@@ -1,0 +1,13 @@
+<router-outlet></router-outlet>
+<input type="text" [(ngModel)]="title">
+{{title}}
+<input type="text" [(ngModel)]="power">
+{{power|exponential}}
+<button (click)="addItem()">Add Item</button>
+<ul>
+  <li *ngIf="projects.length===0">la lista esta vacia</li>
+  <li *ngFor="let project of projects;index as i">
+    {{project}} {{i}}
+    <button (click)="deleteItem(i)">delete</button>
+  </li>
+</ul>
